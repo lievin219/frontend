@@ -39,10 +39,11 @@ function closemenu(){
      
       
        try{
-       const dataretrieved=await fetch('http://localhost:3000/comment',{
+       const dataretrieved=await fetch('https://gakiza-portofolio.onrender.com/comment',{
              method:'POST',
              body:JSON.stringify({email:emaily,message:commenty}),
-             headers:{ 'Content-Type':'application/json'}
+             headers:{ 'Content-Type':'application/json'},
+             credentials:'include'
        })
        const  fetcha=await dataretrieved.json()
         if(fetcha.newcommenti){
