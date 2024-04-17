@@ -55,7 +55,7 @@
     method:'POST',
     body:JSON.stringify({email:emailing,password:passwording}),
     headers:{ 'Content-Type':'application/json' },
-    credentials:true
+    credentials:'include'
    
   })
   const data=await res.json()
