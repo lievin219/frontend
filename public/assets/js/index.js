@@ -37,7 +37,7 @@ function closemenu(){
          const messagei=document.getElementById('messagei').value
 
           try{
-             const respo=await fetch('/contact',{
+             const respo=await fetch('https://gakiza-portofolio.onrender.com/contact',{
                  method:'POST',
                  body:JSON.stringify({name:namei,emai:emailie,message:messagei}),
                  headers:{ 'Content-Type':'application/json'}

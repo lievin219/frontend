@@ -13,10 +13,10 @@
          commentElement.classList.add('comment');
          commentElement.innerHTML = `
              <div class="comment-header">
-                 <span>${email}</span>
+                 <span>${emaily}</span>
                  <span class="delete-btn" onclick="deleteComment(this)">Delete</span>
              </div>
-             <div class="comment-body">${comment}</div>
+             <div class="comment-body">${commenty}</div>
          `;
          commentsContainer.appendChild(commentElement);
          commentsContainer.style.color='#A8DADC'
