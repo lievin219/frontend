@@ -54,7 +54,8 @@
   const res=await fetch('https://gakiza-portofolio.onrender.com/signup',{
     method:'POST',
     body:JSON.stringify({email:emailing,password:passwording}),
-    headers:{ 'Content-Type':'application/json' }
+    headers:{ 'Content-Type':'application/json' },
+    credentials:true
    
   })
   const data=await res.json()
@@ -71,7 +72,9 @@
   }
   else if(data.user){
     reportvalue.textContent=data.user
-    
+    const { token } = data
+                    document.cookie= `jwt=${token}; path='/'; max-age= 3 * 24 * 60 * 60 * 1000` 
+                   
     
      window.location.assign('login.html')
   }

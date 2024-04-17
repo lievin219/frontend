@@ -24,17 +24,20 @@
          const passworde=document.getElementById('passworde').value
          const reportreport=document.getElementById('reporto')
           try{
-      const resi=await fetch('http://localhost:3000/login',{
+      const resi=await fetch('https://gakiza-portofolio.onrender.com/login',{
          method:'POST',
          body:JSON.stringify({email:emaile,password:passworde}),
-         headers:{ 'Content-Type':'application/json'}  
+         headers:{ 'Content-Type':'application/json'}  ,
+          credentials:'include'
       })
        const dating=await resi.json()
        if(dating.error){
            reportreport.innerText=dating.error
        }
         else if(dating.user){
-          reportreport.textContent=dating.user     
+          reportreport.textContent=dating.user 
+          const { token } = data
+                document.cookie= `jwt=${token}; path='/'; max-age= 3 * 24 * 60 * 60 * 1000`    
          window.location.assign('apping.html')
         }
           }
