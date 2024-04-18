@@ -5,6 +5,7 @@ body {
     background: #031927;
     color:white ;
 }
+
 nav ul li {
     display: inline-block;
     justify-content: space-between;

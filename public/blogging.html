@@ -1,77 +1,89 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simple Blog</title>
-  <link rel="stylesheet" href="./assets/css-covers/stylesii.css">
+  <title>Add Article</title>
+  <link rel="stylesheet" href="./assets/css-covers/addingblooo.css">
+  <link rel="stylesheet" href="./assets/css-covers/styleeee.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Create a New Blog Post</h1>
-    <form id="blogForm">
-      <label for="title">Title:</label>
-      <input type="text" id="title" name="title" required><br>
 
-      <label for="description">Description:</label><br>
-      <textarea id="description" name="description" rows="4" cols="50" required></textarea><br>
-
-      <label for="image">Image:</label>
-      <input type="file" id="image" name="image" accept="image/*" required><br>
-
-      <button type="submit">Submit</button>
+<div class="modal-wrapper">
+  <input type="checkbox" id="modal-toggle" class="modal-toggle">
+  <label for="modal-toggle" class="modal-overlay"></label>
+  <div class="modal">
+    
+    <h2>Add Blog</h2>
+    <form class="modal-form" id="blog-form">
+      <div class="form-group">
+        <label for="picture">Picture Link:</label>
+        <input type="text" id="picture" name="picture" required>
+      </div>
+      <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required>
+      </div>
+      <div class="form-group">
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+      </div>
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" rows="4" required></textarea>
+      </div>
+      
+      <div class="form-group form-actions">
+        <button type="submit">Submit</button>
+      </div>
     </form>
-    <div id="blogPosts"></div>
   </div>
+</div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-  // Load saved data
-  var savedData = JSON.parse(localStorage.getItem('blogData'));
-  if (savedData) {
-    document.getElementById('title').value = savedData.title;
-    document.getElementById('description').value = savedData.description;
-  }
+<div id="blog-cards" class="blog-cards"></div>
 
-  // Display saved image
-  var savedImage = localStorage.getItem('blogImage');
-  if (savedImage) {
-    var imageElement = document.createElement('img');
-    imageElement.src = savedImage;
-    document.getElementById('blogPosts').appendChild(imageElement);
-  }
 
-  // Event listener for form submission
-  document.getElementById('blogForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the form from submitting normally
-    
-    // Get form values
-    var title = document.getElementById('title').value;
-    var description = document.getElementById('description').value;
-    var image = document.getElementById('image').files[0];
-    
-    // Save data to localStorage
-    var blogData = {
-      title: title,
-      description: description
-    };
-    localStorage.setItem('blogData', JSON.stringify(blogData));
-    
-    // Save image to localStorage
-    var reader = new FileReader();
-    reader.onload = function(event) {
-      localStorage.setItem('blogImage', event.target.result);
-    };
-    reader.readAsDataURL(image);
-    
-    // Reset form
-    document.getElementById('blogForm').reset();
-    
-    // Reload the page to display updated data
-    location.reload();
-  });
-});
 
-  </script>
 </body>
 </html>
+<script>
+  // Function to handle form submissions
+  document.getElementById('blog-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Retrieve form data
+    var formData = new FormData(this);
+    var blogData = {};
+    formData.forEach(function(value, key) {
+      blogData[key] = value;
+    });
+
+    // Make a POST request to the API endpoint
+    fetch('https://portfolio-backend-xewv.onrender.com/api/blogs', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(blogData),
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Failed to add blog');
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log('Blog added successfully:', data);
+      // alert('Article Added Successfully')
+      // Reset form
+      document.getElementById('blog-form').reset();
+      // Update blog cards if needed
+      // updateBlogCards(); // Uncomment this if you want to update blog cards after adding a new blog
+    })
+    .catch(error => {
+      console.error('Error adding blog:', error);
+      // Handle error
+    });
+  });
+
+</script>

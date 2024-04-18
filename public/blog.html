@@ -1,44 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-    
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="assets/css-covers/blog.css">
-
-    <title>a blog clone</title>     
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horizontal Navbar</title>
+  <link rel="stylesheet" href="./assets/css-covers/style.css">
+  <link rel="stylesheet" href="./assets/css-covers/project.css">
 </head>
 <body>
-    <div class="container">
-        <header> 
-                 
-                <ion-icon name="logo-snapchat" class="logo"></ion-icon>
-           
-            
-        </header>
-        <div class="data">
-            <h1> Welcome Back !</h1>
-           
-            <h5 class="buttoni"> please share any comment</h5>
-            <P> </P>
-            <div class="writing">
-                
-            <input type="email" class="input" placeholder="YOUR NAME">
-            <input type="" class="input" placeholder="YOUR TITLE">
-            <input type="" class="input" placeholder="YOUR MESSAGE">
-        </div>
-           <div class="acting">
-            
-            <div class="data"><button class="buttone" onclick="">Submit your blog</button>
-        
-               
-            </div>
-        </div>
-    </div>
-    <script>
+  
+    <nav>
+      
+      <ul id="sidemenu">
+          <li><a href="apping.html" class="active">home</a></li>
+          <li><a href="apping.html">portofolio</a></li>
+          <li><a href="apping.html">contact</a></li>
+          <li><a href="apping.html">about</a></li>
+         
+         
+  
+          <li><a href="#service">service</a></li>
+          <li><a href="project.html">Recent</a></li>
+          
+          <i class="fa-solid fa-circle-xmark"  onclick="closemenu()"></i>
+  
+  
+  </ul>
+  <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+  </nav>
+  
+          
+  <div class="sign-up-form">
+    <h1>add a blog</h1>
+    <form id="form">
+      
+<input type="file" class="iput-box" placeholder="yourimage"  id="email" required>
+<div id="emailerror"></div>
+<input type="" class="input-box" placeholder="title"  id="password" required>
+<input type="" class="input-box" placeholder="description"  id="password" required>
+<div id="passworderror"></div>
+<button type="button" class="signup-btn" id="signupi">submiit</button>
+<hr>
+<p class="or">OR</p>
+<button type="button" class="login-btn" ></button>
 
 
-    </script>
-</body>
-</html>
+  
+<div id="report"></div>
+
+    </form>
+    
+
+
+
+
+</div>
+
+  <script>
+    
+  </script>
+  </body>
+  </html>
