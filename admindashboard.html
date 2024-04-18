@@ -22,17 +22,19 @@
           <li><a href="project.html">Recent</a></li>
           
           <i class="fa-solid fa-circle-xmark"  onclick="closemenu()"></i>
-  
+   
   
   </ul>
   <i class="fa-solid fa-bars" onclick="openmenu()"></i>
   </nav>
-  <div id="users"></div>
+  <div id="users">
+    
+  </div>
          
   <script>
          const adminhtml=document.getElementById('users')
-         fetch('https://gakiza-portofolio.onrender.com//article/getall')
-        .then(response => response.json()) // Parse the JSON response
+        fetch('https://gakiza-portofolio.onrender.com/article/getall',{method:'GET',headers:{ 'Content-Type':'application/json'}}).then(res=>res.json()
+    )
         .then(data => { // Handle the retrieved data
           data.forEach(blog => {
             // Create a new div element for the blog card
@@ -48,18 +50,19 @@
               <div class="all">
               <div class="blog-header">
                 <h2>${blog.title}</h2>
-                
+                <p class="card-date">Date: ${blog.date}</p>
                 <p>${blog.description}</p>
               </div>
               <div class="blog-actions"> 
-                <button class="edit-button" data-id="${blog._id}">Edit</button> <!-- Add an edit button with data-id attribute containing blog ID -->
+               
                 <button class="delete-button" data-id="${blog._id}">Delete</button> <!-- Add a delete button with data-id attribute containing blog ID -->
               </div>
               </div>
             `;  
 
-           adminhtml.appendChild(blogCard); // Append the blog card to the container
-          })})
+            adminhtml.appendChild(blogCard); // Append the blog card to the container
+          });
+    })
         
   </script>
   </body>
