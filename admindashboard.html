@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horizontal Navbar</title>
+  <link rel="stylesheet" href="public/assets/css-covers/project.css">
+</head>
+<body>
+  
+    <nav>
+      
+      <ul id="sidemenu">
+          <li><a href="apping.html" class="active">home</a></li>
+          <li><a href="apping.html">portofolio</a></li>
+          <li><a href="apping.html">contact</a></li>
+          <li><a href="apping.html">about</a></li>
+         
+         
+  
+          <li><a href="#service">service</a></li>
+          <li><a href="project.html">Recent</a></li>
+          
+          <i class="fa-solid fa-circle-xmark"  onclick="closemenu()"></i>
+  
+  
+  </ul>
+  <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+  </nav>
+  <div id="users"></div>
+         
+  <script>
+         const adminhtml=document.getElementById('users')
+         fetch('https://gakiza-portofolio.onrender.com//article/getall')
+        .then(response => response.json()) // Parse the JSON response
+        .then(data => { // Handle the retrieved data
+          data.forEach(blog => {
+            // Create a new div element for the blog card
+            const blogCard = document.createElement('div');
+            blogCard.classList.add('blog-card'); // Add the CSS class for styling
+
+            // Populate the blog card with HTML content, including the blog title, picture, date, and description
+            blogCard.innerHTML = `
+              <div class="blog-content">
+                <img src="${blog.photo}" alt="Blog Picture">
+                
+              </div>
+              <div class="all">
+              <div class="blog-header">
+                <h2>${blog.title}</h2>
+                
+                <p>${blog.description}</p>
+              </div>
+              <div class="blog-actions"> 
+                <button class="edit-button" data-id="${blog._id}">Edit</button> <!-- Add an edit button with data-id attribute containing blog ID -->
+                <button class="delete-button" data-id="${blog._id}">Delete</button> <!-- Add a delete button with data-id attribute containing blog ID -->
+              </div>
+              </div>
+            `;  
+
+           adminhtml.appendChild(blogCard); // Append the blog card to the container
+          })})
+        
+  </script>
+  </body>
+  </html>
