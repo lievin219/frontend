@@ -55,12 +55,12 @@
                 blogCard.classList.add('blog-card');
                 
                 const cardContent = `
-                    <img src="${blog.email}" alt="Blog Image">
+                    <img src="" alt="Blog Image">
                     <div class="card-content">
-                        <h2>${blog.message}</h2>
+                        <h2>${blog.email}</h2>
                         <span class="card-date">${blog.date}</span>
-                        <p>${blog.description}</p>
-                        <a href="singleblog.html?id=${blog._id}" class="read-more">Read More</a>
+                        <p>${blog.message}</p>
+                       
                     </div>
                 `;
                 blogCard.innerHTML = cardContent;
