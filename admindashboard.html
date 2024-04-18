@@ -40,6 +40,7 @@
       headers:{ 'Content-Type':'application/json' },
             });
             const blogs = await response.json();
+            console.log(typeof blogs)
             
             // Get the container for blog cards
             const blogContainer = document.getElementById('blog-cards-container');
