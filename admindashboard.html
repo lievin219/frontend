@@ -27,6 +27,17 @@
   </ul>
   <i class="fa-solid fa-bars" onclick="openmenu()"></i>
   </nav>
+  <table>
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Message</th>
+        </tr>
+    </thead>
+    <tbody id="table-body">
+        <!-- Data will be dynamically inserted here from backend -->
+    </tbody>
+</table>
   <div id="users">
     
   </div>
@@ -36,6 +47,7 @@
          document.addEventListener("DOMContentLoaded", async function() {
           
           try{const adminhtml=document.getElementById('users')
+          const tableBody = document.getElementById('table-body');
             // Fetch blog data from backendmeth
             const response = await fetch('https://gakiza-portofolio.onrender.com/commentsi',{
       method:'GET',
@@ -51,17 +63,13 @@
             
             // Dynamically generate blog cards
             blogs.forEach(blog => {
-                const blogCard = document.createElement('div');
+                const blogCard = document.createElement('tr');
                 blogCard.classList.add('blog-card');
                 
                 const cardContent = `
                    
-                    <div class="card-content">
-                        <h2>${blog.email}</h2>
-                       
-                        <p>${blog.message}</p>
-                       
-                    </div>
+                <td>${blog.email}</td>
+                <td>${blog.message}</td>
                 `;
                 blogCard.innerHTML = cardContent;
                 
