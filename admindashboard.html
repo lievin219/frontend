@@ -33,7 +33,7 @@
          
   <script>
          const adminhtml=document.getElementById('users')
-         fetch('https://portfolio-backend-xewv.onrender.com/commentsi',{
+         await fetch('https://portfolio-backend-xewv.onrender.com/commentsi',{
           method:'GET',headers:{ 'Content-Type':'application/json'}
          })
       .then(response => response.json()) // Parse the JSON response
