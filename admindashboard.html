@@ -33,7 +33,9 @@
          
   <script>
          const adminhtml=document.getElementById('users')
-         fetch('https://portfolio-backend-xewv.onrender.com/article/getall')
+         fetch('https://portfolio-backend-xewv.onrender.com/article/getall',{
+          method:'GET',headers:{ 'Content-Type':'application/json'}
+         })
       .then(response => response.json()) // Parse the JSON response
       .then(data => { // Handle the retrieved data
         data.forEach(blog => {
