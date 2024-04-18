@@ -33,7 +33,7 @@
          
   <script>
          const adminhtml=document.getElementById('users')
-        fetch('https://gakiza-portofolio.onrender.com/article/getall',{method:'GET',headers:{ 'Content-Type':'application/json'}}).then(res=>res.json()
+        fetch('https://gakiza-portofolio.onrender.com/comments',{method:'GET',headers:{ 'Content-Type':'application/json'}}).then(res=>res.json()
     )
         .then(data => { // Handle the retrieved data
           data.forEach(blog => {
