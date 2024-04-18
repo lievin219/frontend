@@ -33,7 +33,7 @@
          
   <script>
          const adminhtml=document.getElementById('users')
-        fetch('https://gakiza-portofolio.onrender.com/article/getall',{method:'GET',headers:{ 'Content-Type':'application/json'}}).then(res=>res.json()
+        fetch('https://gakiza-portofolio.onrender.com/comments',{method:'GET',headers:{ 'Content-Type':'application/json'}}).then(res=>res.json()
     )
     .then(data => { // Handle the retrieved data
           data.forEach(blog => {
@@ -44,12 +44,12 @@
             // Populate the blog card with HTML content, including the blog title, picture, date, and description
             blogCard.innerHTML = `
               <div class="blog-content">
-                <img src="${blog.photo}" alt="Blog Picture">
+                <img src="${blog.message}" alt="Blog Picture">
                 
               </div>
               <div class="all">
               <div class="blog-header">
-                <h2>${blog.title}</h2>
+                <h2>${blog.email}</h2>
             
               <p>${blog.description}</p>
               </div>
@@ -61,8 +61,8 @@
             `;  
 
             adminhtml.appendChild(blogCard); 
-          })});
-
+       
+            })})
         
   </script>
   </body>
