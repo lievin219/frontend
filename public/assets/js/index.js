@@ -29,30 +29,4 @@ function openmenu(){
 function closemenu(){
     sidemeu.style.right="-100px"
 }
- const submitbutton=document.getElementById('submittingi')
-  submitbutton.addEventListener('click',async(e)=>{
-      e.preventDefault()
-       const namei=document.getElementById('namei').value
-        const emailie=document.getElementById('emaili').value
-         const messagei=document.getElementById('messagei').value
-
-          try{
-             const respo=await fetch('https://gakiza-portofolio.onrender.com/contact',{
-                 method:'POST',
-                 body:JSON.stringify({name:namei,emai:emailie,message:messagei}),
-                 headers:{ 'Content-Type':'application/json'}
-             })
-             const datew=await respo.json()
-             if(datew.newcomment){
-               alert('succesfully submitted')
-               
-
-             }
-             else if(datew.error){
-                 alert(`comment failed due to ${datew.errow}`)
-             }
-          }
-          catch(err){
-     console.log(err)
-          }
-  })
+ 
