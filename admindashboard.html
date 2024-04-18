@@ -41,12 +41,14 @@
             });
             const blogs = await response.json();
             console.log(typeof blogs)
+            const blogsArray = Array.from(blogs);
+            console.log( typeof blogsArray)
             
             // Get the container for blog cards
             const blogContainer = document.getElementById('blog-cards-container');
             const adminhtml=document.getElementById('users')
             // Dynamically generate blog cards
-            blogs.forEach(blog => {
+            blogsArray.forEach(blog => {
                 const blogCard = document.createElement('div');
                 blogCard.classList.add('blog-card');
                 
