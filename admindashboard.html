@@ -34,6 +34,7 @@
   <script>
        
          document.addEventListener("DOMContentLoaded", async function() {
+          const adminhtml=document.getElementById('users')
             // Fetch blog data from backendmeth
             const response = await fetch('https://gakiza-portofolio.onrender.com/commentsi',{
       method:'GET',
@@ -46,7 +47,7 @@
             
             // Get the container for blog cards
             const blogContainer = document.getElementById('blog-cards-container');
-            const adminhtml=document.getElementById('users')
+            
             // Dynamically generate blog cards
             blogsArray.forEach(blog => {
                 const blogCard = document.createElement('div');
