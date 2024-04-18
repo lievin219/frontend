@@ -36,13 +36,13 @@
       
 <input type="file" class="iput-box" placeholder="yourimage"  id="email" required>
 <div id="emailerror"></div>
-<input type="" class="input-box" placeholder="title"  id="password" required>
-<input type="" class="input-box" placeholder="description"  id="password" required>
+<input type="" class="input-box" placeholder="title"  id="title" required>
+<input type="" class="input-box" placeholder="description"  id="description" required>
 <div id="passworderror"></div>
 <button type="button" class="signup-btn" id="signupi">submiit</button>
 <hr>
 <p class="or">OR</p>
-<button type="button" class="login-btn" ></button>
+
 
 
   
@@ -57,7 +57,31 @@
 </div>
 
   <script>
+     const sendinbutton=document.getElementById('signupi')
+     sendinbutton.addEventListener('click',async(e)=>{
+    e.preventDefault()
+    const sentmessage=document.getElementById('passworderror')
+    const picture=document.getElementById('email')
+     const titlei=document.getElementById('title') 
+      const descriptioni=document.getElementById('description')
+       const res=await fetch('https://gakiza-portofolio.onrender.com/blog',{
+        method:'POST',
+        body:JSON.stringify({photo:picture,title:titlei,description:descriptioni}),
+         headers:{ 'Content-Type':'application/json'}  
     
+       })
+       sentmessage.innerHTML=''
+       sentmessage.style.color='red'
+       const dataem=res.json()
+
+       if(dataem.newcommente){
+         sentmessage.innerHTML='plog posted succesfully!!'
+       }
+       else if(dataem.error){
+         sentmessage.innerHTML='plog failed to be posted'
+       }
+
+     })
   </script>
   </body>
   </html>

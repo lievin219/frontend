@@ -29,6 +29,7 @@ input{
     margin: 10px;
     border-radius: 7px;
     padding: 7px;
+    width: 70%;
     border: 1px solid #D58936;
 }
 
@@ -55,7 +56,9 @@ a{
 .login-btn{
 background:#132E32;
 }
-
+.email{
+    width: 70%;
+}
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
 
 
@@ -117,6 +120,9 @@ background:#132E32;
     nav .fa-solid{
     display: block;
     font-size: 15px;
+    }
+    .email{
+        width:70%
     }
         
     
