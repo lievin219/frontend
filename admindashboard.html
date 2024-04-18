@@ -44,14 +44,13 @@
             const blogs = await response.json();
             console.log(typeof blogs)
             console.log(blogs)
-            const blogsArray = Array.from(blogs);
-            console.log( typeof blogsArray)
+           
             
             // Get the container for blog cards
             const blogContainer = document.getElementById('blog-cards-container');
             
             // Dynamically generate blog cards
-            blogsArray.forEach(blog => {
+            blogs.forEach(blog => {
                 const blogCard = document.createElement('div');
                 blogCard.classList.add('blog-card');
                 
