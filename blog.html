@@ -34,12 +34,12 @@
     <h1>add a blog</h1>
     <form id="form">
       
-<input type="file" class="iput-box" placeholder="yourimage"  id="email" required>
+<input type="file" class="iput-box" placeholder="yourimage"  id="emaile" required>
 <div id="emailerror"></div>
-<input type="" class="input-box" placeholder="title"  id="title" required>
-<input type="" class="input-box" placeholder="description"  id="description" required>
+<input type="" class="input-box" placeholder="title"  id="titlee" required>
+<input type="" class="input-box" placeholder="description"  id="descriptione" required>
 <div id="passworderror"></div>
-<button type="button" class="signup-btn" id="signupi">submiit</button>
+<button type="button" class="signup-btn" id="signupie">submiit</button>
 <hr>
 <p class="or">OR</p>
 
@@ -57,13 +57,14 @@
 </div>
 
   <script>
-     const sendinbutton=document.getElementById('signupi')
+     const sendinbutton=document.getElementById('signupie')
      sendinbutton.addEventListener('click',async(e)=>{
     e.preventDefault()
     const sentmessage=document.getElementById('passworderror')
-    const picture=document.getElementById('email')
-     const titlei=document.getElementById('title') 
-      const descriptioni=document.getElementById('description')
+    sentmessage.style.backgroundColor='lightblue'
+    const picture=document.getElementById('emaile').value
+     const titlei=document.getElementById('titlee').value 
+      const descriptioni=document.getElementById('descriptione').value
       try{
        const res=await fetch('https://gakiza-portofolio.onrender.com/blog',{
         method:'POST',
@@ -80,7 +81,7 @@
          sentmessage.innerHTML='plog posted succesfully!!'
        }
        else if(dataem.error){
-         sentmessage.innerHTML='plog failed to be posted'
+         sentmessage.innerHTML=`blog failed to be posted due to ${error}`
        }}
        catch(error){
      console.log(error)
