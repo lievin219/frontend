@@ -33,44 +33,32 @@
       const data = await resi.json();
                 
                 console.log(data)
-                if(data){
-                    const {token} = data
-                document.cookie= `jwt=${token}; path='/'; maxAge= 3 * 24 * 60 * 60 * 1000`
-                // console.log(token)
-                 console.log(token)
-                   location.assign('apping.html')
-                }
-                
-            } catch (error) {
-                console.error('Error during login:', error);
-                alert('An error occurred during login. Please try again later.');
-            }
-
-            loginForm.reset();
-        });
  
-    //    const dating=await resi.json()
-    //    if(dating.error){
-    //        reportreport.innerText=dating.error
-    //    }
-    //     else if(dating.user){
-    //       reportreport.textContent=dating.user 
-    //       const { token } = dating
-    //             document.cookie= `jwt=${token}; path='/'; max-age= 3 * 24 * 60 * 60 * 1000` 
+       const dating=await resi.json()
+       if(dating.error){
+           reportreport.innerText=dating.error
+      }
+         else if(dating.user){
+          reportreport.textContent=dating.user 
+           const { token } = dating
+                 document.cookie= `jwt=${token}; path='/'; max-age= 3 * 24 * 60 * 60 * 1000` 
                   
-    //      window.location.assign('apping.html')
-    //     }
-    //       }
-    //       catch(error){
-    //          console.log(error)
+        window.location.assign('apping.html')
+      }
+         }
+       catch(error){
+             console.log(error)
 
-    //       }
+         }
         
     //   })
       const cookieeeee = document.cookie.split("=")[1];
 console.log(cookieeeee);
 if (cookieeeee) {
     window.location.href = "apping.html";
+}
+if(!cookieeeee){
+    window.location.assign('index.html')
 }
      
   </script>
