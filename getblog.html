@@ -27,14 +27,14 @@
   </ul>
   <i class="fa-solid fa-bars" onclick="openmenu()"></i>
   </nav>
-  <div id="bloging">
+  <div id="blog-cards-container">
     <!-- Add comment form -->
   </div>
 
   <script>
    
     document.addEventListener("DOMContentLoaded", async function() {
-      let bloghtml=document.getElementById('blogging')
+     
           const cookie=document.cookie.split('jwt=')[1]
           try{const adminhtml=document.getElementById('users')
          
@@ -52,7 +52,7 @@
            
             
             // Get the container for blog cards
-            const blogContainer = document.getElementById('blog-cards-container');
+            const bloghtml = document.getElementById('blog-cards-container');
             
             // Dynamically generate blog cards
             blogs.forEach(blog => {
@@ -71,7 +71,7 @@
                 blogCard.innerHTML = cardContent;
                 
                 // Append blog card to container
-                blogContainer.appendChild(blogCard);
+                bloghtml.appendChild(blogCard);
             });
           }
             catch(error){
