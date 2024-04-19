@@ -37,14 +37,22 @@
         else if(dating.user){
           reportreport.textContent=dating.user 
           const { token } = dating
-                document.cookie= `jwt=${token}; path='/'; max-age= 3 * 24 * 60 * 60 * 1000`    
+                document.cookie= `jwt=${token}; path='/'; max-age= 3 * 24 * 60 * 60 * 1000` 
+                 console.log(token)   
          window.location.assign('apping.html')
         }
           }
           catch(error){
              console.log(error)
+
           }
+        
       })
+      const cookieeeee = document.cookie.split("=")[1];
+console.log(cookieeeee);
+if (cookieeeee) {
+    window.location.href = "apping.html";
+}
      
   </script>
    
