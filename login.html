@@ -44,23 +44,25 @@
                  document.cookie= `jwt=${token}; path='/'; max-age= 3 * 24 * 60 * 60 * 1000` 
                   
         window.location.assign('apping.html')
-        const cookie= document.cookie.split("=")[1]
-console.log(cookie)
-if(cookie) {
-    window.location.assign('apping.html')
-}
-      }
-         }
+        
+         }}
        catch(error){
              console.log(error)
 
          }   
-
         
     
       
 
 })
+const cookie= document.cookie.split("=")[1]
+console.log(cookie)
+if(cookie) {
+    window.location.assign('apping.html')
+}
+
+
+        
 
 
   </script>
