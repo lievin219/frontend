@@ -77,10 +77,10 @@
        })
        sentmessage.innerHTML=''
        let valer=await res.json()
-        if(valer){
+        if(valer.newcommente){
           sentmessage.innerHTML='blog posted ✅'
         }
-        else{
+        else if(valer.error){
           sentmessage.innerHTML='blog failed ❌'
         }
         
