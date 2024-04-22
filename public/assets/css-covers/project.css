@@ -2,8 +2,12 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: #031927;
+    background: #010400;
     color:white ;
+}
+#passworderror{
+    color: red;
+    font-size: 13px;
 }
 
 nav ul li {

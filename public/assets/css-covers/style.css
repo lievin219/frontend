@@ -5,6 +5,9 @@ body{
     background: #12664F;
     background-position: center;
 }
+#passworderror{
+ color: red;
+}
 .report{
   width:50%;
   font-size: 35px;

@@ -10,7 +10,7 @@ html{
     scroll-behavior: smooth;
 }
 body{
-    background: #031927;
+    background: #010400;
     color:white;
    
 }
@@ -40,7 +40,7 @@ nav{
     align-items: center;
     justify-content: space-between;
     position: fixed;
-    background: #12664F;
+    background: #010400;
     width: 100%;
     border-radius: 10PX;
     background-size: cover;
@@ -85,7 +85,7 @@ nav{
     height: 250px;
     margin:10px auto;
     border-radius: 5px;
-    background:  #12664F;
+    background:  #010400;
     color: white;
     position: relative;
 }
