@@ -60,12 +60,13 @@
      const sendinbutton=document.getElementById('signupie')
      sendinbutton.addEventListener('click',async(e)=>{
     e.preventDefault()
-    const sentmessage=document.getElementById('passworderror')
+   
+      try{
+        const sentmessage=document.getElementById('passworderror')
     sentmessage.style.backgroundColor='lightblue'
     const picture=document.getElementById('emaile').value
      const titlei=document.getElementById('titlee').value 
       const descriptioni=document.getElementById('descriptione').value
-      try{
         const cookies = document.cookie.split('jwt=')[1]
        const res=await fetch('https://gakiza-portofolio.onrender.com/blog',{
         method:'POST',
