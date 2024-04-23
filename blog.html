@@ -70,7 +70,7 @@
         const cookies = document.cookie.split('jwt=')[1]
        const res=await fetch('https://gakiza-portofolio.onrender.com/blog',{
         method:'POST',
-        body:JSON.stringify({image:picture,title:titlei,description:descriptioni}),
+        body:JSON.stringify({imagei:picture,title:titlei,description:descriptioni}),
         headers: { "Authorization": `Bearer ${cookies}`},
         credentials:'include'
     
@@ -78,7 +78,7 @@
        sentmessage.innerHTML=''
     const valer=await res.json()
     console.log(titlei)
-       console.log('image found is ',picture)
+       console.log('image found is ',picture,imagei)
        console.log(`hello`)
         if(valer.newcommente){
           sentmessage.innerHTML='blog posted ✅'
