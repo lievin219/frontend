@@ -63,21 +63,22 @@
     const sentmessage=document.getElementById('passworderror')
     sentmessage.style.backgroundColor='lightblue'
     const picture=document.getElementById('emaile').value
-     const titlei=document.getElementById('titlee').value 
-      const descriptioni=document.getElementById('descriptione').value
+     const titleie=document.getElementById('titlee').value 
+      const descriptionie=document.getElementById('descriptione').value
       try{
        
         const cookies = document.cookie.split('jwt=')[1]
        const res=await fetch('https://gakiza-portofolio.onrender.com/blog',{
         method:'POST',
-        body:JSON.stringify({image:picture,title:titlei,description:descriptioni}),
+        body:JSON.stringify({image:picture,title:titleie,description:descriptionie}),
         headers: { "Authorization": `Bearer ${cookies}`},
         credentials:'include'
     
        })
        sentmessage.innerHTML=''
     const valer=await res.json()
-    console.log(titlei)
+    console.log(titleie,title)
+    console.log(valer.description)
        console.log('image found is ',picture,imagei)
        console.log(`hello`)
         if(valer.newcommente){
