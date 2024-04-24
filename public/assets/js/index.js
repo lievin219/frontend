@@ -29,8 +29,14 @@ function openmenu(){
 function closemenu(){
     sidemeu.style.right="-100px"
 }
-document.getElementById("logoutButton").addEventListener("click", function() {
-    // Set the JWT cookie expiration time to a past date to remove it
-    document.cookie = 'jwt=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;';
-    alert("Logged out successfully!");
-});
+
+document.getElementById("logoutButton").addEventListener('click', async (e) => {
+    
+        e.preventDefault();
+        updateUserUII(null); 
+        document.cookie =` jwt=; max-age=0;`
+        setTimeout(() => {
+            window.location.href = 'login.html';
+        }, 0); 
+    }
+);
