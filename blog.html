@@ -71,7 +71,7 @@
        const res=await fetch('https://gakiza-portofolio.onrender.com/blogi',{
         method:'POST',
         body:JSON.stringify({image:picture,title:titleie,description:descriptionie}),
-        headers:{ 'Content-Type':'application/json' },
+        headers: { "Authorization": `Bearer ${cookies}`},
         credentials:'include'
     
        })
