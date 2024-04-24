@@ -104,7 +104,7 @@ th {
     background-color: #fff;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 2px 4px white;
+    box-shadow: 0 2px 4px gray;
     transition: transform 0.3s ease;
 }
 
