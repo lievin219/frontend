@@ -120,6 +120,7 @@ th {
 
 .card-content {
     padding: 20px;
+    border: 2px 5px greenyellow;
 }
 .card-date {
     display: block;
