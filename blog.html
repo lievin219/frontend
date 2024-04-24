@@ -83,14 +83,19 @@
      
        
         if(valer){
-          sentmessage.innerHTML='blog posted ✅'
+          if(valer.newitem){
+            sentmessage.innerHTML='blog posted 👌🏽'
+          }
+          else if(valer.error){
+            sentmessage.innerHTML='blog didnt post due to missing some ❌'
+          }
         }
        
         
          
       }
        catch(error){
-     sentmessage.innerHTML='blog failed ❌'
+     sentmessage.innerHTML='blog failed 🚫'
        }
 
      })
