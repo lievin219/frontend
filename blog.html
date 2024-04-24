@@ -77,11 +77,13 @@
        })
        sentmessage.innerHTML=''
     const valer=await res.json()
+    console.log(typeof valer)
+    console.log(valer)
     console.log(titleie,title)
     console.log(valer.description)
        console.log('image found is ',picture,imagei)
        console.log(`hello`)
-        if(valer.newcommente){
+        if(valer.newitem){
           sentmessage.innerHTML='blog posted ✅'
         }
         else if(valer.error){
