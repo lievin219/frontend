@@ -101,8 +101,9 @@ th {
 .blog-card {
     width: calc(30.33% - 20px); 
     margin-bottom: 20px;
-    background-color: #fff;
+    background-color:#183446;
     border-radius: 10px;
+    color: white;
     overflow: hidden;
     box-shadow: 0 2px 4px gray;
     transition: transform 0.3s ease;
