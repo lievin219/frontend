@@ -53,6 +53,9 @@
             
             // Get the container for blog cards
             const bloghtml = document.getElementById('blog-cards-container');
+            const imageing=document.createElement('img')
+            imageing.src='https://images.app.goo.gl/r1LcsDVqs2FuXHC9A'
+            image.alt='capistone'
             
             // Dynamically generate blog cards
             blogs.forEach(blog => {
@@ -76,6 +79,7 @@
                 
                 // Append blog card to container
                 bloghtml.appendChild(blogCard);
+                bloghtml.appendChild(imageing)
               
             });
           }
