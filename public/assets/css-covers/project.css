@@ -88,6 +88,7 @@ th {
     cursor: pointer;
 }
 .blog-cards-container {
+    background: white;
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
