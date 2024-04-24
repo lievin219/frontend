@@ -79,22 +79,18 @@
     const valer=await res.json()
     console.log(typeof valer)
     console.log(valer)
-    console.log(titleie,title)
-    console.log(valer.description)
-       console.log('image found is ',picture,imagei)
-       console.log(`hello`)
-        if(valer.newitem){
+   
+     
+       
+        if(valer){
           sentmessage.innerHTML='blog posted ✅'
         }
-        else if(valer.error){
-          sentmessage.innerHTML='blog failed ❌'
-          console.log(valer.error)
-        }
+       
         
          
       }
        catch(error){
-     sentmessage.innerHTML='no response gotten 🚫'
+     sentmessage.innerHTML='blog failed ❌'
        }
 
      })
