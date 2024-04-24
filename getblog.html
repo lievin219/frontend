@@ -57,22 +57,26 @@
             // Dynamically generate blog cards
             blogs.forEach(blog => {
                 const blogCard = document.createElement('div');
-              
+                const imge = document.createElement('img');
+                imge.alt = 'Image description';
+                imge.src = 'https://example.com/image.jpg';
                 
                 const cardContent = `
                 <div class="card-content">
                     <img src="https://images.app.goo.gl/r1LcsDVqs2FuXHC9A" alt="Blog Image">
-                    <img src="https://images.app.goo.gl/pChD6aWBfkxQ8Q5LA" alt="Description of the image">
+                    <img src="https://images.app.goo.gl/pChD6aWBfkxQ8Q5LA" alt="image">
                         <h2>${blog.title}</h2>
                        
                         <p>${blog.description}</p>
-                        <a href="singleblog.html?id=${blog._id}" class="read-more">Read More</a>
+                        <a href="singleblog.html?id=${blog.image}" class="read-more">Read More</a>
                     </div>
                 `;
                 blogCard.innerHTML = cardContent;
+                blogCard.appendChild(imge)
                 
                 // Append blog card to container
                 bloghtml.appendChild(blogCard);
+                bloghtml.appendChild(imge)
             });
           }
             catch(error){
