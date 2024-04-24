@@ -68,10 +68,10 @@
       try{
        
         const cookies = document.cookie.split('jwt=')[1]
-       const res=await fetch('https://gakiza-portofolio.onrender.com/blog',{
+       const res=await fetch('https://gakiza-portofolio.onrender.com/blogi',{
         method:'POST',
         body:JSON.stringify({image:picture,title:titleie,description:descriptionie}),
-        headers: { "Authorization": `Bearer ${cookies}`},
+        headers:{ 'Content-Type':'application/json' },
         credentials:'include'
     
        })
