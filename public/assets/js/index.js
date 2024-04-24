@@ -29,4 +29,23 @@ function openmenu(){
 function closemenu(){
     sidemeu.style.right="-100px"
 }
+document.getElementById("logoutButton").addEventListener("click", function() {
+    // Get the JWT cookie
+    const cookies = document.cookie.split(';');
+    let jwtCookie;
+    for (const cookie of cookies) {
+        if (cookie.trim().startsWith('jwt=')) {
+            jwtCookie = cookie.trim().substring(4); // Extract the JWT value
+            break;
+        }
+    }
+
+    // If JWT cookie is found, remove it
+    if (jwtCookie) {
+        document.cookie = "jwt=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        alert("Logged out successfully!");
+    } else {
+        alert("No JWT cookie found!");
+    }
+});
  
