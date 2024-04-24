@@ -41,3 +41,16 @@ let logout=document.getElementById("logotButton")
     }, 0); 
     }
 );
+
+function logout() {
+    // Set the expiration date of the cookie to a past date
+    document.cookie = "jwt=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    
+    // Redirect the user to the login page or any other necessary action
+    window.location.assign("login.html"); // Redirect to login page
+}
+
+// Attach click event listener to the logout button
+document.getElementById("glooutBtn").addEventListener("click", function() {
+    logout();
+});
