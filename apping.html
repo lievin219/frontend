@@ -306,10 +306,15 @@ function closemenu(){
 
 function logout() {
     // Set the expiration date of the cookie to a past date
-    document.cookie = "jwt=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    document.cookie =` jwt=; max-age=0;`
+
     alert('logout succesfully!!')
+    setTimeout(() => {
+            window.location.href = 'register.html';
+        }, 0); 
+
     // Redirect the user to the login page or any other necessary action
-    window.location.assign("login.html"); // Redirect to login page
+   // Redirect to login page
 }
 
 // Attach click event listener to the logout button
