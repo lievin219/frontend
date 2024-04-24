@@ -30,13 +30,14 @@ function closemenu(){
     sidemeu.style.right="-100px"
 }
 
-document.getElementById("logoutButton").addEventListener('click', async (e) => {
+let logout=document.getElementById("logotButton")
+   logout.addEventListener('click', async (e) => {
     
-        e.preventDefault();
-        updateUserUII(null); 
-        document.cookie = `jwt=; max-age=0`
-        setTimeout(() => {
-            window.location.href = 'login.html';
-        }, 0); 
+    e.preventDefault();
+    updateUserUII(null); 
+    document.cookie = `jwt=; max-age=0`
+    setTimeout(() => {
+        window.location.href = 'login.html';
+    }, 0); 
     }
 );
