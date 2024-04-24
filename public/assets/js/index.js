@@ -34,7 +34,7 @@ document.getElementById("logoutButton").addEventListener('click', async (e) => {
     
         e.preventDefault();
         updateUserUII(null); 
-        document.cookie =` jwt=; max-age=0;`
+        document.cookie = `jwt=; max-age=0`
         setTimeout(() => {
             window.location.href = 'login.html';
         }, 0); 
