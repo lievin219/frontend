@@ -307,7 +307,7 @@ function closemenu(){
 function logout() {
     // Set the expiration date of the cookie to a past date
     document.cookie =` jwt=; max-age=0;`
-
+       
     alert('logout succesfully!!')
     setTimeout(() => {
             window.location.href = 'login.html';
