@@ -53,9 +53,7 @@
             
             // Get the container for blog cards
             const bloghtml = document.getElementById('blog-cards-container');
-            const imageing=document.createElement('img')
-            imageing.src='https://images.app.goo.gl/r1LcsDVqs2FuXHC9A'
-            imageing.alt='capistone'
+         
             
             // Dynamically generate blog cards
             blogs.forEach(blog => {
@@ -64,14 +62,14 @@
                               
                 
                 const cardContent = `
-                <img src="${blog.image}" alt="Blog Image">
+                <img src="${blog.image}" alt="Blog Image"/>
                    
                 <div class="card-content">
                     
                         <h2>${blog.title}</h2>
                        
                         <p>${blog.description}</p>
-                        <a href="singleblog.html?id=${blog.image}" class="read-more">Read More</a>
+                        <a href="singleblog.html?id=${blog.image}" class="read-more">edit</a>
                     </div>
                 `;
                 blogCard.innerHTML = cardContent;
@@ -79,7 +77,7 @@
                 
                 // Append blog card to container
                 bloghtml.appendChild(blogCard);
-                bloghtml.appendChild(imageing)
+              
               
             });
           }
