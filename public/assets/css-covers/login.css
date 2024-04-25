@@ -2,18 +2,18 @@ body{
     margin: 0;
     padding: 0;
     background-size: cover;
-    background: #686868;
+    background: #010400;
     background-position: center;
 }
 .sign-up-form{
-     background: #074F57;
+     background: white;
      width:300px;
      box-shadow: 0 0 0 3px rgba(0,0,0, 0.3);
      text-align: center;
      padding: 20px;
      background: #074F57;
      margin: 8% auto 0;
-     height: 400px;
+     height: 500px;
      border-radius: 20px;
 
 }
