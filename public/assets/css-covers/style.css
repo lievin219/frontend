@@ -1,9 +1,12 @@
 body{
     margin: 0;
     padding: 0;
-    background-size: cover;
     background: #010400;
+    background-size: cover;;
     background-position: center;
+}
+#report{
+    color: darkkhaki;
 }
 #passworderror{
  color: red;
@@ -11,17 +14,17 @@ body{
 .report{
   width:50%;
   font-size: 35px;
-  background-color: white;
+  background-color: darkkhaki;
   padding:20px
   
 }
 .sign-up-form{
-     background: white;
+     background:  #010400;
      width:200px;
      box-shadow: 0 0 0 3px rgba(0,0,0, 0.3);
      text-align: center;
      padding: 20px;
-     background: #fff;
+    
      margin: 8% auto 0;
      height: 400px;
      margin-top: 45px;
