@@ -71,7 +71,7 @@
        const res=await fetch('https://gakiza-portofolio.onrender.com/log',{
         method:'POST',
         body:JSON.stringify({picture:picturei,subtitle:titleie,subdescription:descriptionie}),
-        headers: { "Authorization": `Bearer ${cookies}`},
+        headers:{ 'Content-Type':'application/json' },
         credentials:'include'
     
        })
@@ -84,10 +84,10 @@
      
        
         if(valer){
-          if(valer.newitem){
+          if(valer.new_Blogssaq){
             sentmessage.innerHTML='blog posted 👌🏽'
           }
-          else if(valer.erro){
+          else if(valer.error){
             sentmessage.innerHTML='blog didnt post due to missing some ❌'
           }
         }
