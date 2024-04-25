@@ -39,7 +39,7 @@
           try{const adminhtml=document.getElementById('users')
          
             // Fetch blog data from backendmeth
-            const response = await fetch('https://gakiza-portofolio.onrender.com/article/getall',{
+            const response = await fetch('https://gakiza-portofolio.onrender.com/getall',{
       method:'GET',
       credentials:'include',
      headers: { "Authorization": `Bearer ${cookie}`}
@@ -62,13 +62,13 @@
                               
                 
                 const cardContent = `
-                <img src="${blog.image}" alt="Blog Image"/>
+                <img src="${blog.picture}" alt="Blog Image"/>
                    
                 <div class="card-content">
                     
-                        <h2>${blog.title}</h2>
+                        <h2>${blog.subtitle}</h2>
                        
-                        <p>${blog.description}</p>
+                        <p>${blog.subdescription}</p>
                         <a href="singleblog.html?id=${blog.image}" class="read-more">edit</a>
                     </div>
                 `;
