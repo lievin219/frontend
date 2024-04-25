@@ -62,15 +62,15 @@
     e.preventDefault()
     const sentmessage=document.getElementById('passworderror')
     sentmessage.style.backgroundColor='lightblue'
-    const picture=document.getElementById('emaile').value
+    const picturei=document.getElementById('emaile').value
      const titleie=document.getElementById('titlee').value 
       const descriptionie=document.getElementById('descriptione').value
       try{
        
         const cookies = document.cookie.split('jwt=')[1]
-       const res=await fetch('https://gakiza-portofolio.onrender.com/bloge',{
+       const res=await fetch('https://gakiza-portofolio.onrender.com/log',{
         method:'POST',
-        body:JSON.stringify({image:picture,title:titleie,description:descriptionie}),
+        body:JSON.stringify({picture:picturei,subtitle:titleie,subdescription:descriptionie}),
         headers: { "Authorization": `Bearer ${cookies}`},
         credentials:'include'
     
