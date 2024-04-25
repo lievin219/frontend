@@ -6,12 +6,12 @@ body{
     background-position: center;
 }
 .sign-up-form{
-     background: white;
+     background: #010400;
      width:200px;
      box-shadow: 0 0 0 3px rgba(0,0,0, 0.3);
      text-align: center;
      padding: 20px;
-     background: white;
+     background: #010400;
      margin: 8% auto 0;
      height: 350px;
      border-radius: 20px;
@@ -26,7 +26,7 @@ input{
 
 p{
      font-size: 14px;
-     color: aliceblue;
+     color: darkkhaki;
 }
 .sign-up-form h1{
      color:#86BBD8 ;
@@ -35,7 +35,7 @@ p{
 button{
     background: #86BBD8;
     border-radius: 5px;
-    color:white;
+    color:darkkhaki;
    
   padding: 10px;
   font-size: 12px;
