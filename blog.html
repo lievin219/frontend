@@ -73,7 +73,7 @@
        const res=await fetch('https://gakiza-portofolio.onrender.com/log',{
         method:'POST',
         body:JSON.stringify({picture:pleaselord.value,subtitle:titleie,subdescription:descriptionie}),
-        headers: { "Authorization": `Bearer ${cookie}`},
+        headers: { "Authorization": `Bearer ${cookies}`},
         credentials:'include'
     
        })
@@ -99,6 +99,7 @@
       
        catch(error){
      sentmessage.innerHTML=`${error}`
+     console.log(error)
        }
       
 
