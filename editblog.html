@@ -1,0 +1,89 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horizontal Navbar</title>
+  <link rel="stylesheet" href="./public/assets/css-covers/style.css">
+  <link rel="stylesheet" href="./public/assets/css-covers/project.css">
+</head>
+<body>
+  
+    <nav>
+      
+      <ul id="sidemenu">
+          <li><a href="apping.html" class="active">home</a></li>
+          <li><a href="apping.html">portofolio</a></li>
+          <li><a href="apping.html">contact</a></li>
+          <li><a href="apping.html">about</a></li>
+         
+         
+  
+          <li><a href="#service">service</a></li>
+          <li><a href="project.html">Recent</a></li>
+          
+          <i class="fa-solid fa-circle-xmark"  onclick="closemenu()"></i>
+  
+  
+  </ul>
+  <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+  </nav>
+  
+          
+  <div class="sign-up-form">
+    <h1>add a blog</h1>
+    <form id="form">
+      
+<input type="text" class="iput-box" placeholder="yourimage"  id="tile">
+<div id="emailerror"></div>
+<input type="text" id="tili" placeholder="tryout" required>
+<input type="text" class="input-box" placeholder="title"  id="tila" >
+<input type="text" class="input-box" placeholder="description"  id="time">
+<div id="passworderror"></div>
+<button type="button" class="signup-btn" id="tilu">submiit</button>
+<hr>
+<p class="or">OR</p>
+
+
+
+  
+<div id="report"></div>
+
+    </form>
+    
+
+
+
+
+</div>
+
+  <script>
+      
+      const butttonadded=document.getElementById('tilu')
+      butttonadded.addEventListener('click',async(e)=>{
+        const idi=document.getElementById('tile').value
+      const picture=document.getElementById('tili').value
+      const title=document.getElementById('tila').value
+      const description=document.getElementById('time').value
+       try{
+      const render=await fetch('https://gakiza-portofolio.onrender.com/blog/edit/${idi}',{
+          method:'PUT',
+          body:JSON.stringify({picture:picture,subtitle:title,subdescription:description}),
+          headers:{
+        'Content-Type': 'application/json'
+      },
+      credentials:'include'
+      })
+      const main=await render.json()
+      if(main){
+         console.log(`${main.message}`,'hhhhhwell posted')
+      }
+    }
+       catch(error){
+       console.log(error)
+       }
+      })
+
+  </script>
+  </body>
+  </html>
