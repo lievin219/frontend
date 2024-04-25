@@ -85,6 +85,11 @@
       console.log(error)
           }}
         )
+        const cookie= document.cookie.split("=")[1]
+console.log(cookie)
+if(cookie) {
+    window.location.assign('apping.html')
+}
    
      
     </script>
