@@ -167,7 +167,7 @@ th {
     }
     .blog-card{
         width: 20rem;
-        margin-left: -3rem;
+        margin-left: -10rem;
     }
 }
 @media (max-width: 575.98px) {
