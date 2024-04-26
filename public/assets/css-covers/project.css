@@ -97,6 +97,9 @@ th {
     padding-top: 3rem;
 
 }
+.blogid{
+     visibility: hidden;
+}
 
 .blog-card {
     width: calc(30.33% - 20px); 
