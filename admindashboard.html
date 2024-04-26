@@ -66,6 +66,8 @@
             // Get the container for blog cards
             const blogContainer = document.getElementById('blog-cards-container');
             const admin=document.createElement('a')
+
+            const edit=document.createElement('a')
             
             if(blogs){
               blogs.forEach(blog => {
@@ -78,13 +80,16 @@
                 <td>${blog.email}</td>
                 <td>${blog.message}</td>
                 `;
-                admin.href='blog.html'
+                admin.href='getblog.html'
                 admin.textContent='adminpage'
+                edit.href='getblog.html'
+                edit.textContent='adminedit'
                 blogCard.innerHTML =cardContent;
                 
                 // Append blog card to container
                 adminhtml.appendChild(blogCard)
-                adminhtml.appendChild(admin);
+                adminhtml.appendChild(admin)
+                adminhtml.appendChild(edit);
             }) 
             }
             // Dynamically generate blog cards
