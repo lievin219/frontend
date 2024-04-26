@@ -62,6 +62,7 @@
                               
                 
                 const cardContent = `
+                <div class='blogid'>${blog._id}</div>
                 <img src="${blog.picture}" alt="Blog Image"/>
                    
                 <div class="card-content">
@@ -69,6 +70,7 @@
                         <h2>${blog.subtitle}</h2>
                        
                         <p>${blog.subdescription}</p>
+                        
                         <a href="singleblog.html?id=${blog.image}" class="read-more">edit</a>
                     </div>
                 `;
