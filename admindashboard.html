@@ -58,6 +58,10 @@
    
      
             });
+            if(response.status==='401'){
+              console.log('un authorized')
+              window.location.assign('getblog.html')
+            }
             const blogs = await response.json();
             console.log(typeof blogs)
             console.log(blogs)
@@ -94,9 +98,7 @@
                 adminhtml.appendChild(edit);
             }) 
             }
-            if(response.status==='401'){
-              window.location.assign('getblog.html')
-            }
+            
             // Dynamically generate blog cards
            }
             catch(error){
