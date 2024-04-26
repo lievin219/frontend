@@ -69,7 +69,7 @@
         const urlParams = new URLSearchParams(window.location.search);
     const blogId = urlParams.get("id");
 
-      const render=await fetch(`https://gakiza-portofolio.onrender.com/edit/${blogId}`,{
+      const render=await fetch(`https://gakiza-portofolio.onrender.com/blog/edit/${blogId}`,{
           method:'PUT',
           body:JSON.stringify({picture:picture,subtitle:title,subdescription:description}),
           headers:{
