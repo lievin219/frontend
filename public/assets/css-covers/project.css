@@ -98,7 +98,8 @@ th {
 
 }
 .blogid{
-     visibility: hidden;
+     
+     display: none;
 }
 
 .blog-card {
