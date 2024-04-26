@@ -43,146 +43,69 @@
   </div>
          
   <script>
-    document.addEventListener("DOMContentLoaded", async function() {
-    try {
-        const cookies = extractCookie('jwt');
-        console.log('our cookie is ', cookies);
-
-        const isAdminPage = checkAdminPage();
-        
-        if (isAdminPage) {
-            await fetchComments(cookies);
-        }
-
-    } catch(error) {
-        console.error(error);
-    }
-});
-
-// Function to extract cookie value
-function extractCookie(cookieName) {
-    const cookies = document.cookie.split(`${cookieName}=`);
-    return cookies.length > 1 ? cookies[1] : null;
-}
-
-// Function to check if it's an admin page
-function checkAdminPage() {
-    return document.getElementById('users') !== null;
-}
-
-// Function to fetch comments
-async function fetchComments(cookies) {
-    const response = await fetch('https://gakiza-portofolio.onrender.com/commentsi', {
-        method: 'GET',
-        headers: { "Authorization": `Bearer ${cookies}` },
-        credentials: 'include',
-    });
-
-    if (response.status === 401) {
-        console.log('Unauthorized');
-        window.location.assign('getblog.html');
-        return;
-    }
-
-    const blogs = await response.json();
-    console.log(typeof blogs);
-    console.log(blogs);
-    renderComments(blogs);
-}
-
-// Function to render comments
-function renderComments(blogs) {
-    const tableBody = document.getElementById('table-body');
-    const blogContainer = document.getElementById('blog-cards-container');
-    const adminhtml = document.getElementById('users');
-    const admin = createLink('getblog.html', 'adminpage');
-    const edit = createLink('getblog.html', 'adminedit');
-
-    if (blogs) {
-        blogs.forEach(blog => {
-            const blogCard = document.createElement('tr');
-            const cardContent = `
-                <td>${blog.email}</td>
-                <td>${blog.message}</td>
-            `;
-            blogCard.innerHTML = cardContent;
-            adminhtml.appendChild(blogCard);
-            adminhtml.appendChild(admin);
-            adminhtml.appendChild(edit);
-        });
-    }
-}
-
-// Function to create link element
-function createLink(href, textContent) {
-    const link = document.createElement('a');
-    link.href = href;
-    link.textContent = textContent;
-    return link;
-}
-
+    
        
-    //      document.addEventListener("DOMContentLoaded", async function() {
-    //       const cookies = document.cookie.split('jwt=')[1]
-    //       console.log('our cookie is ',cookies)
-    //       try{const adminhtml=document.getElementById('users')
+         document.addEventListener("DOMContentLoaded", async function() {
+          const cookies = document.cookie.split('jwt=')[1]
+          console.log('our cookie is ',cookies)
+          try{const adminhtml=document.getElementById('users')
           
-    //       const tableBody = document.getElementById('table-body');
-    //         // Fetch blog data from backendmeth
-    //         const response = await fetch('https://gakiza-portofolio.onrender.com/commentsi',{
-    //   method:'GET',
-    //  headers: { "Authorization": `Bearer ${cookies}`},
-    //  credentials:'include',
+          const tableBody = document.getElementById('table-body');
+            // Fetch blog data from backendmeth
+            const response = await fetch('https://gakiza-portofolio.onrender.com/commentsi',{
+      method:'GET',
+     headers: { "Authorization": `Bearer ${cookies}`},
+     credentials:'include',
    
      
-    //         });
-    //         if(response.status==='401'){
-    //           console.log('un authorized')
-    //           window.location.assign('getblog.html')
-    //         }
-    //         const blogs = await response.json();
-    //         console.log(typeof blogs)
-    //         console.log(blogs)
-    //         console.log('responses are',response)
+            });
+            if(response.status==='401'){
+              console.log('un authorized')
+              window.location.assign('getblog.html')
+            }
+            const blogs = await response.json();
+            console.log(typeof blogs)
+            console.log(blogs)
+            console.log('responses are',response)
             
             
-    //         // Get the container for blog cards
-    //         const blogContainer = document.getElementById('blog-cards-container');
-    //         const admin=document.createElement('a')
+            // Get the container for blog cards
+            const blogContainer = document.getElementById('blog-cards-container');
+            const admin=document.createElement('a')
 
-    //         const edit=document.createElement('a')
+            const edit=document.createElement('a')
             
-    //         if(blogs){
+            if(blogs){
 
-    //           blogs.forEach(blog => {
-    //             const blogCard = document.createElement('tr');
+              blogs.forEach(blog => {
+                const blogCard = document.createElement('tr');
               
                 
-    //             const cardContent = `
+                const cardContent = `
          
                    
-    //             <td>${blog.email}</td>
-    //             <td>${blog.message}</td>
-    //             `;
-    //             admin.href='getblog.html'
-    //             admin.textContent='adminpage'
-    //             edit.href='getblog.html'
-    //             edit.textContent='adminedit'
-    //             blogCard.innerHTML =cardContent;
+                <td>${blog.email}</td>
+                <td>${blog.message}</td>
+                `;
+                admin.href='getblog.html'
+                admin.textContent='adminpage'
+                edit.href='getblog.html'
+                edit.textContent='adminedit'
+                blogCard.innerHTML =cardContent;
                 
-    //             // Append blog card to container
-    //             adminhtml.appendChild(blogCard)
-    //             adminhtml.appendChild(admin)
-    //             adminhtml.appendChild(edit);
-    //         }) 
-    //         }
+                // Append blog card to container
+                adminhtml.appendChild(blogCard)
+                adminhtml.appendChild(admin)
+                adminhtml.appendChild(edit);
+            }) 
+            }
             
-    //         // Dynamically generate blog cards
-    //        }
-    //         catch(error){
-    //            console.log(error)
-    //         }
-    //     });
+            // Dynamically generate blog cards
+           }
+            catch(error){
+               console.log(error)
+            }
+        });
   </script>
   </body>
   </html>
