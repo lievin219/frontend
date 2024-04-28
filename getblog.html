@@ -93,27 +93,7 @@
                console.log(error)
             }
           })
-          let newelement=document.getElementsByClassName('read-mor')
-                newelement.addEventListener('click',async()=>{
-                               try{
-                                const urlParams = new URLSearchParams(window.location.search);
-    const blogId = urlParams.get("id");
-                                        const newdeetedone=await fetch(`https://gakiza-portofolio.onrender.com//dele/${blogId}`,{
-                                             method:'DELETE',
-                                             headers:{ 'Content-Type':'application/json'},
-                                             credentials: 'include'
-                                        })
-                                        const demain=newdeetedone.json()
-                                        if(demain){
-                                           console.log('blog deleted sucesfully!!')
-                                        }
-                               }
-
-                               
-                               catch(error){
-       console.log(error)
-                               }})
-        ;
+         
           
   </script>
   </body>
