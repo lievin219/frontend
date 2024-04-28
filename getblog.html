@@ -76,7 +76,23 @@
                     </div>
                 `;
                 blogCard.innerHTML = cardContent;
-                let newelement=document.getElementsByClassName('read-mor')
+               
+                })
+                
+                
+                // Append blog card to container
+                bloghtml.appendChild(blogCard);
+          }
+              
+            
+
+            
+          
+            catch(error){
+               console.log(error)
+            }
+          })
+          let newelement=document.getElementsByClassName('read-mor')
                 newelement.addEventListener('click',async()=>{
                                try{
                                 const urlParams = new URLSearchParams(window.location.search);
@@ -95,24 +111,9 @@
                                
                                catch(error){
        console.log(error)
-                               }
-                })
-                
-                
-                // Append blog card to container
-                bloghtml.appendChild(blogCard);
-              
-              
-            });
-
-            
-          }
-            catch(error){
-               console.log(error)
-            }
-
+                               }})
         ;
-          })
+          
   </script>
   </body>
   </html>
