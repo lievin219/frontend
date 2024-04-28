@@ -5,6 +5,9 @@ body{
     background:   #010400;
     background-position: center;
 }
+#reporto{
+    color: darkkhaki;
+}
 .sign-up-form{
      background:  #010400;
      width:200px;
