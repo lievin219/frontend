@@ -47,7 +47,10 @@ body{
     position: absolute;
     width: 100%;
     text-align: center;
+    width: 55px;
     opacity: 0;
+    position: fixed;
+    color: pink;
     animation: fade 12s infinite;
 }
 
@@ -464,6 +467,13 @@ transition:transform(00.5s);
 .contactm form{
     width:100%;
     
+}
+
+.contactr p i{
+     font-size: 10px;
+gap: 40px;}
+.contactr p{
+     font-weight: 100;
 }
 form input,form textarea{
     width:100%;
